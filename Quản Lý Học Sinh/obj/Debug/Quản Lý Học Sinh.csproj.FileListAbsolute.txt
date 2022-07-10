@@ -1,0 +1,10 @@
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\bin\Debug\Quản Lý Học Sinh.exe.config
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\bin\Debug\Quản Lý Học Sinh.exe
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\bin\Debug\Quản Lý Học Sinh.pdb
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản_Lý_Học_Sinh.Form1.resources
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản_Lý_Học_Sinh.Properties.Resources.resources
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản Lý Học Sinh.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản Lý Học Sinh.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản Lý Học Sinh.exe
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản Lý Học Sinh.pdb
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quản Lý Học Sinh\obj\Debug\Quản Lý Học Sinh.csproj.AssemblyReference.cache

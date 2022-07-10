@@ -1,0 +1,12 @@
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\bin\Debug\Quan Ly Nhan Vien.exe.config
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\bin\Debug\Quan Ly Nhan Vien.exe
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\bin\Debug\Quan Ly Nhan Vien.pdb
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan Ly Nhan Vien.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan_Ly_Nhan_Vien.Form1.resources
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan_Ly_Nhan_Vien.Properties.Resources.resources
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan Ly Nhan Vien.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan Ly Nhan Vien.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan Ly Nhan Vien.exe
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan Ly Nhan Vien.pdb
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan_Ly_Nhan_Vien.TimKiem.resources
+C:\Users\HP\Desktop\Học\Lập trình giao diện\Ôn tập các thao tác cơ bản trên form\Ôn tập\Quan Ly Nhan Vien\obj\Debug\Quan_Ly_Nhan_Vien.SapXep.resources
