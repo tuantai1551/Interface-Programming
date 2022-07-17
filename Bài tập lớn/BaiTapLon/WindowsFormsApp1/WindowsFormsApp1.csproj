@@ -206,5 +206,23 @@
   <ItemGroup>
     <None Include="Resources\1055804.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1370471767-1024x1024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verified.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vcsnormal_93488.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
