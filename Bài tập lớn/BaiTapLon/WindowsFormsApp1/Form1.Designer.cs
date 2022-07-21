@@ -69,6 +69,7 @@ namespace WindowsFormsApp1
             // 
             this.linkDangKy.AutoSize = true;
             this.linkDangKy.BackColor = System.Drawing.Color.Fuchsia;
+            this.linkDangKy.DisabledLinkColor = System.Drawing.Color.White;
             this.linkDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkDangKy.Location = new System.Drawing.Point(75, 314);
             this.linkDangKy.Name = "linkDangKy";
@@ -145,9 +146,9 @@ namespace WindowsFormsApp1
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Image = global::WindowsFormsApp1.Properties.Resources.vcsnormal_93488;
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangNhap.Location = new System.Drawing.Point(188, 384);
+            this.btnDangNhap.Location = new System.Drawing.Point(144, 384);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(210, 49);
+            this.btnDangNhap.Size = new System.Drawing.Size(231, 49);
             this.btnDangNhap.TabIndex = 1;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

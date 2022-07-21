@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtSo1 = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,8 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbSoLuongVe = new System.Windows.Forms.ComboBox();
+            this.toolTipRandom = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipChonSo = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,11 +60,14 @@ namespace WindowsFormsApp1
             // 
             this.btnXacNhan.Enabled = false;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(37, 389);
+            this.btnXacNhan.Image = global::WindowsFormsApp1.Properties.Resources.vcsnormal_93488;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.Location = new System.Drawing.Point(65, 389);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(261, 63);
+            this.btnXacNhan.Size = new System.Drawing.Size(215, 63);
             this.btnXacNhan.TabIndex = 4;
             this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXacNhan.UseVisualStyleBackColor = true;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
@@ -108,6 +114,7 @@ namespace WindowsFormsApp1
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(68, 61);
             this.btnRandom.TabIndex = 6;
+            this.toolTipChonSo.SetToolTip(this.btnRandom, "Chọn số tùy ý");
             this.btnRandom.UseVisualStyleBackColor = true;
             this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
@@ -120,6 +127,8 @@ namespace WindowsFormsApp1
             this.btnThayDoi.Name = "btnThayDoi";
             this.btnThayDoi.Size = new System.Drawing.Size(68, 61);
             this.btnThayDoi.TabIndex = 1;
+            this.btnThayDoi.Tag = "";
+            this.toolTipRandom.SetToolTip(this.btnThayDoi, "Chọn số ngãu nhiên");
             this.btnThayDoi.UseVisualStyleBackColor = true;
             this.btnThayDoi.Click += new System.EventHandler(this.btnThayDoi_Click);
             // 
@@ -139,7 +148,7 @@ namespace WindowsFormsApp1
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(43, 268);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 39);
+            this.label2.Size = new System.Drawing.Size(189, 38);
             this.label2.TabIndex = 7;
             this.label2.Text = "Số lượng vé";
             // 
@@ -151,6 +160,14 @@ namespace WindowsFormsApp1
             this.cbSoLuongVe.Name = "cbSoLuongVe";
             this.cbSoLuongVe.Size = new System.Drawing.Size(151, 46);
             this.cbSoLuongVe.TabIndex = 8;
+            // 
+            // toolTipRandom
+            // 
+            this.toolTipRandom.ToolTipTitle = "Explain";
+            // 
+            // toolTipChonSo
+            // 
+            this.toolTipChonSo.ToolTipTitle = "Explain";
             // 
             // Mua3So
             // 
@@ -187,5 +204,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbSoLuongVe;
+        private System.Windows.Forms.ToolTip toolTipRandom;
+        private System.Windows.Forms.ToolTip toolTipChonSo;
     }
 }
