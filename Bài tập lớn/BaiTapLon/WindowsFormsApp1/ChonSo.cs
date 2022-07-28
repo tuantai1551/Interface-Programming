@@ -38,6 +38,10 @@ namespace WindowsFormsApp1
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Hãy suy nghĩ kĩ hơn nhé", " Thông báo", MessageBoxButtons.Yes, MessageBoxIcon.Question);
+            }
         }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
@@ -46,7 +50,7 @@ namespace WindowsFormsApp1
                 LuuCacSoVaoList(List3SoDuocChon);
                 if (List3SoDuocChon.Count != 3)
                 {
-                    MessageBox.Show("Bạn chỉ được chọn 3 số", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn được phép chon 3 số", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -59,7 +63,7 @@ namespace WindowsFormsApp1
                 LuuCacSoVaoList(List4SoDuocChon);
                 if (List4SoDuocChon.Count != 4)
                 {
-                    MessageBox.Show("Bạn chỉ được chọn 4 số", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn được phép chon 4 số", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -72,7 +76,7 @@ namespace WindowsFormsApp1
                 LuuCacSoVaoList(List5SoDuocChon);
                 if (List5SoDuocChon.Count != 5)
                 {
-                    MessageBox.Show("Bạn chỉ được chọn 5 số", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn được phép chon 5 số", " Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -82,5 +86,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void ChonSo_Load(object sender, EventArgs e)
+        {
+            List3SoDuocChon.Clear();
+            List4SoDuocChon.Clear();
+            List5SoDuocChon.Clear();
+        }
     }
 }

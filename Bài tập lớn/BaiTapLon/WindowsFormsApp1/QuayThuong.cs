@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApp1
 {
@@ -104,62 +106,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void LuuFileGiaiThuong(int LuaChon)
-        {
-            string directoryPath = Application.StartupPath + @"\GiaiThuong.TXT";
-
-            string today = DateTime.Now.ToString("MM/dd/yyyy");
-            File.AppendAllText(directoryPath, today);
-            File.AppendAllText(directoryPath, " - ");
-
-            File.AppendAllText(directoryPath, LuaChon.ToString());
-            File.AppendAllText(directoryPath, " - ");
-
-            File.AppendAllText(directoryPath, int.Parse(txtSo1.Text) < 10 ? "0" + txtSo1.Text : txtSo1.Text);
-            File.AppendAllText(directoryPath, " ");
-            File.AppendAllText(directoryPath, int.Parse(txtSo2.Text) < 10 ? "0" + txtSo2.Text : txtSo2.Text);
-            File.AppendAllText(directoryPath, " ");
-            File.AppendAllText(directoryPath, int.Parse(txtSo3.Text) < 10 ? "0" + txtSo3.Text : txtSo3.Text);
-            
-            Random rd = new Random();
-            if (txtSo4.Visible == false && txtSo5.Visible == false)
-            {      
-                double SoTienTrung = rd.Next(2000000, 3000000);
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, SoTienTrung.ToString());
-            }
-
-            if (txtSo4.Visible)
-            {
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, int.Parse(txtSo4.Text) < 10 ? "0" + txtSo4.Text : txtSo4.Text);
-
-            }
-
-            if (txtSo4.Visible && txtSo5.Visible == false)
-            {
-                double SoTienTrung = rd.Next(3000000, 4000000);
-
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, SoTienTrung.ToString());
-            }    
-
-            if (txtSo4.Visible && txtSo5.Visible)
-            {
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, int.Parse(txtSo5.Text) < 10 ? "0" + txtSo5.Text : txtSo5.Text);
-
-                double SoTienTrung = rd.Next(4000000, 5000000);
-
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, SoTienTrung.ToString());
-            }
-
-            File.AppendAllText(directoryPath, "\n");
-
-            MessageBox.Show("Bạn đã quay số thành công", " Thông báo", MessageBoxButtons.OK);
-        }
-
         private void ThemVaoListQuaySo(int LuaChon)
         {
             GiaiThuong Prize = new GiaiThuong();
@@ -186,7 +132,44 @@ namespace WindowsFormsApp1
 
 
             Prize.ThongTinVeTrungThuong1 = VeTrungThuong;
+
+            Random rd = new Random();
+            //Chỉ có 3 số được chọn
+            if (txtSo4.Visible == false && txtSo5.Visible == false)
+            {
+                double SoTienTrung = rd.Next(2000000, 3000000);
+                Prize.SoTienTrung1 = SoTienTrung;
+
+            }
+
+
+            //Có 4 số được chọn
+            if (txtSo4.Visible == true && txtSo5.Visible == false)
+            {
+                double SoTienTrung = rd.Next(3000000, 4000000);
+                Prize.SoTienTrung1 = SoTienTrung;
+
+            }
+
+            //Có 5 số được chọn
+            if (txtSo4.Visible == true && txtSo5.Visible == true)
+            {
+                double SoTienTrung = rd.Next(4000000, 5000000);
+                Prize.SoTienTrung1 = SoTienTrung;
+            }
+
             DanhSachGiaiThuong.ListGiaiThuong1.Add(Prize);
+
+            string directoryPath = Application.StartupPath + @"\GiaiThuong.TXT";
+
+            FileStream fs = null;
+            fs = new FileStream(directoryPath, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+
+            bf.Serialize(fs, DanhSachGiaiThuong.ListGiaiThuong1);
+            fs.Close();
+
+            MessageBox.Show("Bạn đã quay số thành công", "Thông báo", MessageBoxButtons.OK);
         }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
@@ -209,8 +192,6 @@ namespace WindowsFormsApp1
             {
                 txtSo5.Text = So5.ToString();
             }
-
-            LuuFileGiaiThuong(cbLuaChon.SelectedIndex + 3);
 
             ThemVaoListQuaySo(cbLuaChon.SelectedIndex + 3);
         }
@@ -331,9 +312,6 @@ namespace WindowsFormsApp1
         }
 
 
-
-
-
         //Form thống kê giải thưởng
         private bool KiemTraTrungThuong(GiaiThuong Prize, Ve Ticket)
         {
@@ -412,6 +390,7 @@ namespace WindowsFormsApp1
 
         }
 
+        //Hiển thị các kết quả trúng thưởng
         private void XuLyFileKetQuaGiaiThuong()
         {
             int size_DanhSachVe = DanhSachVeDatMua.ListVeDatMua1.Count;

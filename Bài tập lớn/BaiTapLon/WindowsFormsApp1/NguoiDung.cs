@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    [Serializable]
     class NguoiDung
     {
         private string TenDangNhap, MatKhau, SoDienThoai, Email;

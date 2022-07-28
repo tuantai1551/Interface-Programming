@@ -141,7 +141,11 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        ThemVaoListView(DanhSachVeDatMua.ListVeDatMua1[i]);
+                        if ((DanhSachVeDatMua.ListVeDatMua1[i].TenTaiKhoan1 == Form1.TenDangNhap))
+                        {
+                            ThemVaoListView(DanhSachVeDatMua.ListVeDatMua1[i]);
+
+                        }
                     }
 
                 }

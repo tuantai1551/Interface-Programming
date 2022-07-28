@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
             this.thốngKêToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(880, 49);
+            this.menuStrip2.Size = new System.Drawing.Size(1121, 49);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -84,42 +84,42 @@ namespace WindowsFormsApp1
             // sốToolStripMenuItem
             // 
             this.sốToolStripMenuItem.Name = "sốToolStripMenuItem";
-            this.sốToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.sốToolStripMenuItem.Size = new System.Drawing.Size(224, 46);
             this.sốToolStripMenuItem.Text = "3 số";
             this.sốToolStripMenuItem.Click += new System.EventHandler(this.sốToolStripMenuItem_Click);
             // 
             // sốToolStripMenuItem1
             // 
             this.sốToolStripMenuItem1.Name = "sốToolStripMenuItem1";
-            this.sốToolStripMenuItem1.Size = new System.Drawing.Size(150, 40);
+            this.sốToolStripMenuItem1.Size = new System.Drawing.Size(224, 46);
             this.sốToolStripMenuItem1.Text = "4 số";
             this.sốToolStripMenuItem1.Click += new System.EventHandler(this.sốToolStripMenuItem1_Click);
             // 
             // sốToolStripMenuItem2
             // 
             this.sốToolStripMenuItem2.Name = "sốToolStripMenuItem2";
-            this.sốToolStripMenuItem2.Size = new System.Drawing.Size(150, 40);
+            this.sốToolStripMenuItem2.Size = new System.Drawing.Size(224, 46);
             this.sốToolStripMenuItem2.Text = "5 số";
             this.sốToolStripMenuItem2.Click += new System.EventHandler(this.sốToolStripMenuItem2_Click);
             // 
             // xemLịchSửĐặtToolStripMenuItem
             // 
             this.xemLịchSửĐặtToolStripMenuItem.Name = "xemLịchSửĐặtToolStripMenuItem";
-            this.xemLịchSửĐặtToolStripMenuItem.Size = new System.Drawing.Size(210, 39);
+            this.xemLịchSửĐặtToolStripMenuItem.Size = new System.Drawing.Size(246, 45);
             this.xemLịchSửĐặtToolStripMenuItem.Text = "Lịch sử đặt cược";
             this.xemLịchSửĐặtToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửĐặtToolStripMenuItem_Click_1);
             // 
             // kếtQuảToolStripMenuItem
             // 
             this.kếtQuảToolStripMenuItem.Name = "kếtQuảToolStripMenuItem";
-            this.kếtQuảToolStripMenuItem.Size = new System.Drawing.Size(261, 39);
+            this.kếtQuảToolStripMenuItem.Size = new System.Drawing.Size(309, 45);
             this.kếtQuảToolStripMenuItem.Text = "Lịch sử trúng thưởng";
             this.kếtQuảToolStripMenuItem.Click += new System.EventHandler(this.kếtQuảToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(221, 39);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(264, 45);
             this.thốngKêToolStripMenuItem.Text = "Thống kê kết quả";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
@@ -225,7 +225,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(880, 450);
+            this.ClientSize = new System.Drawing.Size(1121, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);

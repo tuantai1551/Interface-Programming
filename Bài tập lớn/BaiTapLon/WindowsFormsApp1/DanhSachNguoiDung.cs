@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class DanhSachNguoiDung
+    [Serializable]
+
+    public static class DanhSachNguoiDung
     {
         private static List<NguoiDung> listNguoiDung = new List<NguoiDung>();
         internal static List<NguoiDung> ListNguoiDung { get => listNguoiDung; set => listNguoiDung = value; }

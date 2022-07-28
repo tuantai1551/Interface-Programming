@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    [Serializable]
+
     class DanhSachVeDatMua
     {
         private static List<Ve> ListVeDatMua = new List<Ve>();

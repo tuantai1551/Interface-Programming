@@ -24,11 +24,7 @@ namespace WindowsFormsApp1
             txtEmail.Text = Form1.Email;
         }
 
-        private void sốToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Mua3So Form3So = new Mua3So();
-            Form3So.ShowDialog();
-        }
+
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -40,6 +36,13 @@ namespace WindowsFormsApp1
             {
                 e.Cancel = true;
             }    
+        }
+
+
+        private void sốToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mua3So Form3So = new Mua3So();
+            Form3So.ShowDialog();
         }
 
         private void sốToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApp1
 {
@@ -22,42 +24,15 @@ namespace WindowsFormsApp1
         {
             if (MessageBox.Show("Bạn có chắc chưa", " Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                //Ghi vào trong file
                 string directoryPath = Application.StartupPath + @"\DanhSachVeDaMua.TXT";
-
-                File.AppendAllText(directoryPath, Form1.TenDangNhap);
-                File.AppendAllText(directoryPath, " - ");
-
+                Form1 frm1 = new Form1();
+                //Ghi file
                 string today = DateTime.Now.ToString("MM/dd/yyyy");
-                File.AppendAllText(directoryPath, today);
-                File.AppendAllText(directoryPath, " - ");
-
-                File.AppendAllText(directoryPath, "5");
-                File.AppendAllText(directoryPath, " - ");
-
-                File.AppendAllText(directoryPath, (cbSoLuongVe.SelectedIndex + 1).ToString());
-                File.AppendAllText(directoryPath, " - ");
-
-                File.AppendAllText(directoryPath, int.Parse(txtSo1.Text) < 10 ? "0" + txtSo1.Text : txtSo1.Text);
-
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, int.Parse(txtSo2.Text) < 10 ? "0" + txtSo2.Text : txtSo2.Text);
-
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, int.Parse(txtSo3.Text) < 10 ? "0" + txtSo3.Text : txtSo3.Text);
-
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, int.Parse(txtSo4.Text) < 10 ? "0" + txtSo4.Text : txtSo4.Text);
-
-                File.AppendAllText(directoryPath, " ");
-                File.AppendAllText(directoryPath, int.Parse(txtSo5.Text) < 10 ? "0" + txtSo5.Text : txtSo5.Text);
-
-
-                File.AppendAllText(directoryPath, "\n");
-
-                MessageBox.Show("Bạn đã mua thành công", " Thông báo", MessageBoxButtons.OK);
 
                 //Thêm vào danh sách vé đã mua
                 List<int> SoDaMua = new List<int>();
+
                 SoDaMua.Add(int.Parse(txtSo1.Text));
                 SoDaMua.Add(int.Parse(txtSo2.Text));
                 SoDaMua.Add(int.Parse(txtSo3.Text));
@@ -68,6 +43,18 @@ namespace WindowsFormsApp1
 
                 DanhSachVeDatMua.ListVeDatMua1.Add(Ticket);
 
+                FileStream fs = null;
+                fs = new FileStream(directoryPath, FileMode.Create);
+                BinaryFormatter bf = new BinaryFormatter();
+
+                bf.Serialize(fs, DanhSachVeDatMua.ListVeDatMua1);
+                fs.Close();
+
+                MessageBox.Show("Bạn đã mua thành công", "Thông báo", MessageBoxButtons.OK);
+
+
+
+                //GHi file thành công và xóa dữ liệu ở các ô textbox
                 txtSo1.Clear();
                 txtSo2.Clear();
                 txtSo3.Clear();

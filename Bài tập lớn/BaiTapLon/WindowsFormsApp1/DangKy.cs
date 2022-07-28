@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 
 namespace WindowsFormsApp1
@@ -21,7 +23,6 @@ namespace WindowsFormsApp1
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             //Tiến hành lấy dữ liệu từ các textbox
-
             NguoiDung User = new NguoiDung();
             User.TenDangNhap1 = txtTenDangNhap.Text;
             User.MatKhau1 = txtMatKhau.Text;
@@ -88,26 +89,22 @@ namespace WindowsFormsApp1
                 Check = false;
             }
 
+            //Ghi file
             string directoryPath = Application.StartupPath + @"\ThongTinNguoiDung.TXT";
             if (Check)
             {
-                //Ghi vào trong file ThongTinNguoiDung
-                //Kiểm tra có tồn tại file hay không
+                DanhSachNguoiDung.ListNguoiDung.Add(User);
 
-                if (File.Exists(directoryPath))
-                {
-                    User.GhiFile(directoryPath);
-                    DanhSachNguoiDung.ListNguoiDung.Add(User);
-                    MessageBox.Show("Đăng ký thành công. Bạn có thể đăng nhập với tài khoản này", "Thông báo", MessageBoxButtons.OK);
+                FileStream fs = null;
+                fs = new FileStream(directoryPath, FileMode.Create);
+                BinaryFormatter bf = new BinaryFormatter();
 
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi trong quá trình ghi dữ liệu. Xin kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
-                }
+                 bf.Serialize(fs, DanhSachNguoiDung.ListNguoiDung);
+                 fs.Close();
+
+
+                MessageBox.Show("Đăng ký thành công. Bạn có thể đăng nhập với tài khoản này", "Thông báo", MessageBoxButtons.OK);
             }
-
-            DanhSachNguoiDung.ListNguoiDung.Add(User);
         }
         private void txtTenDangNhap_TextChanged(object sender, EventArgs e)
         {
@@ -132,5 +129,6 @@ namespace WindowsFormsApp1
                 e.Cancel = true;
             }
         }
+
     }
 }

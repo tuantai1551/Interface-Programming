@@ -1351,6 +1351,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.cbSo);
             this.Name = "ChonSo";
             this.Text = "ChonSo";
+            this.Load += new System.EventHandler(this.ChonSo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

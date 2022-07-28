@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApp1
 {
@@ -71,7 +73,6 @@ namespace WindowsFormsApp1
                 FormMenu.ShowDialog();
             }
 
-
         }
 
         private void linkLayLaiMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -80,100 +81,68 @@ namespace WindowsFormsApp1
             FormLayLaiMatKhau.Show();
         }
 
-
-
         private void DocFileDanhSachThongTinNguoiDung()
         {
             string directoryPath = Application.StartupPath + @"\ThongTinNguoiDung.TXT";
-            string[] a = File.ReadAllLines(directoryPath);
-            NguoiDung User;
-            
-            if (a.Length != 0) // khi dữ liệu chưa có người dùng nào khi đọc file sẽ lỗi
+
+            if (File.Exists(directoryPath))
             {
-                for (int i = 0; i < a.Length; ++i)
+                // Ghi chưa có người dùng nào
+                if (new FileInfo(directoryPath).Length > 0)
                 {
-                    string[] MySubString = a[i].Split(' ');
+                    FileStream fs = new FileStream(directoryPath, FileMode.Open);
 
-                    User = new NguoiDung();
-                    User.TenDangNhap1 = MySubString[0];
+                    BinaryFormatter bf = new BinaryFormatter();
 
-                    User.MatKhau1 = MySubString[2];
+                    object data = bf.Deserialize(fs);
 
-                    User.SoDienThoai1 = MySubString[4];
+                    DanhSachNguoiDung.ListNguoiDung = data as List<NguoiDung>;
 
-                    User.Email1 = MySubString[6];
-
-                    DanhSachNguoiDung.ListNguoiDung.Add(User);
+                    fs.Close();
                 }
             }
-        }
 
+
+        }
         private void DocFileDanhSachVeDaMua()
         {
             string directoryPath = Application.StartupPath + @"\DanhSachVeDaMua.TXT";
-            string[] a = File.ReadAllLines(directoryPath);
-            Ve Ticket;
-            if (a.Length != 0) // khi dữ liệu chưa có người dùng nào khi đọc file sẽ lỗi
+
+            if (File.Exists(directoryPath))
             {
-                for (int i = 0; i < a.Length; ++i)
+                // Ghi chưa có người dùng nào
+                if (new FileInfo(directoryPath).Length > 0)
                 {
-                    string[] MySubString = a[i].Split(' ');
+                    FileStream fs = new FileStream(directoryPath, FileMode.Open);
 
-                    Ticket = new Ve();
-                    Ticket.TenTaiKhoan1 = MySubString[0];
+                    BinaryFormatter bf = new BinaryFormatter();
 
-                    Ticket.NgayMua1 = DateTime.Parse(MySubString[2]).Date;
+                    object data = bf.Deserialize(fs);
 
-                    Ticket.LoaiVe1 = int.Parse(MySubString[4]);
+                    DanhSachVeDatMua.ListVeDatMua1 = data as List<Ve>;
 
-                    Ticket.SoVe1 = int.Parse(MySubString[6]);
-
-                    int j = 8;
-
-                    List<int> VeDaMua = new List<int>();
-                    VeDaMua.Add(int.Parse(MySubString[8]));
-
-                    while (j < MySubString.Length - 1)
-                    {
-                        VeDaMua.Add(int.Parse(MySubString[++j]));
-                    }
-
-                    Ticket.ThongTinVeMua1 = VeDaMua;
-
-                    DanhSachVeDatMua.ListVeDatMua1.Add(Ticket);
+                    fs.Close();
                 }
             }
         }
         private void DocFileDanhSachGiaiThuong()
         {
             string directoryPath = Application.StartupPath + @"\GiaiThuong.TXT";
-            string[] a = File.ReadAllLines(directoryPath);
-            GiaiThuong Prize;
-            if (a.Length != 0) // khi dữ liệu chưa có người dùng nào khi đọc file sẽ lỗi
+
+            if (File.Exists(directoryPath))
             {
-                for (int i = 0; i < a.Length; ++i)
+                // Ghi chưa có người dùng nào
+                if (new FileInfo(directoryPath).Length > 0)
                 {
-                    string[] MySubString = a[i].Split(' ');
+                    FileStream fs = new FileStream(directoryPath, FileMode.Open);
 
-                    Prize = new GiaiThuong();
-                    Prize.NgayMua1 = DateTime.Parse(MySubString[0]);
+                    BinaryFormatter bf = new BinaryFormatter();
 
-                    Prize.LoaiVe1 = int.Parse(MySubString[2]);
+                    object data = bf.Deserialize(fs);
 
-                    int j = 4;
-                    List<int> KetQuaQuaySo = new List<int>();
-                    KetQuaQuaySo.Add(int.Parse(MySubString[4]));
+                    DanhSachGiaiThuong.ListGiaiThuong1 = data as List<GiaiThuong>;
 
-                    while (j < MySubString.Length - 2)
-                    {
-                        KetQuaQuaySo.Add(int.Parse(MySubString[++j]));
-
-                    }
-                    Prize.ThongTinVeTrungThuong1 = KetQuaQuaySo;
-
-                    Prize.SoTienTrung1 = double.Parse(MySubString[++j]);
-
-                    DanhSachGiaiThuong.ListGiaiThuong1.Add(Prize);
+                    fs.Close();
                 }
             }
         }
@@ -253,5 +222,6 @@ namespace WindowsFormsApp1
                 btnDangNhap.Enabled = false;
             }    
         }
+
     }
 }
