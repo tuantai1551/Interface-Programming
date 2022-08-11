@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class KetQua
+    partial class LichSuTrungThuong
     {
         /// <summary>
         /// Required designer variable.
@@ -39,11 +39,12 @@ namespace WindowsFormsApp1
             // 
             this.lvKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvKetQua.HideSelection = false;
-            this.lvKetQua.Location = new System.Drawing.Point(87, 249);
+            this.lvKetQua.Location = new System.Drawing.Point(147, 247);
             this.lvKetQua.Name = "lvKetQua";
-            this.lvKetQua.Size = new System.Drawing.Size(1107, 253);
+            this.lvKetQua.Size = new System.Drawing.Size(1031, 280);
             this.lvKetQua.TabIndex = 36;
-            this.lvKetQua.UseCompatibleStateImageBehavior = false;            // 
+            this.lvKetQua.UseCompatibleStateImageBehavior = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -84,6 +85,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.lvKetQua);
             this.Controls.Add(this.label1);
             this.Name = "KetQua";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KetQua";
             this.Load += new System.EventHandler(this.KetQua_Load);
             this.ResumeLayout(false);

@@ -19,34 +19,16 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
-        private void btnRandom_Click(object sender, EventArgs e)
+        private void txtSo1_TextChanged(object sender, EventArgs e)
         {
-            ChonSo.LuaChon = 3;
-            ChonSo FormChonSo = new ChonSo();
-            FormChonSo.ShowDialog();
-
-            if(ChonSo.List3SoDuocChon.Count > 0)
+            if (txtSo1.Text.Length != 0 && txtSo2.Text.Length != 0 && txtSo3.Text.Length != 0)
             {
-                txtSo1.Text = ChonSo.List3SoDuocChon[0].ToString();
-                txtSo2.Text = ChonSo.List3SoDuocChon[1].ToString();
-                txtSo3.Text = ChonSo.List3SoDuocChon[2].ToString();
-            }    
-
-
-
-        }
-
-        private void btnThayDoi_Click(object sender, EventArgs e)
-        {
-            Random rd = new Random();
-            int So1 = rd.Next(0, 99);
-            int So2 = rd.Next(0, 99);
-            int So3 = rd.Next(0, 99);
-
-            txtSo1.Text = So1.ToString();
-            txtSo2.Text = So2.ToString();
-            txtSo3.Text = So3.ToString();
+                btnXacNhan.Enabled = true;
+            }
+            else
+            {
+                btnXacNhan.Enabled = false;
+            }
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
@@ -55,7 +37,7 @@ namespace WindowsFormsApp1
             {
                 //Ghi vào trong file
                 string directoryPath = Application.StartupPath + @"\DanhSachVeDaMua.TXT";
-                Form1 frm1 = new Form1();
+
                 //Ghi file
                 string today = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -66,7 +48,7 @@ namespace WindowsFormsApp1
                 SoDaMua.Add(int.Parse(txtSo2.Text));
                 SoDaMua.Add(int.Parse(txtSo3.Text));
 
-                Ve Ticket = new Ve(Form1.TenDangNhap, DateTime.Parse(today), 3, cbSoLuongVe.SelectedIndex + 1, SoDaMua);
+                Ve Ticket = new Ve(DangNhap.TenDangNhap, DateTime.Parse(today), 3, cbSoLuongVe.SelectedIndex + 1, SoDaMua);
 
                 DanhSachVeDatMua.ListVeDatMua1.Add(Ticket);
 
@@ -85,26 +67,98 @@ namespace WindowsFormsApp1
                 txtSo1.Clear();
                 txtSo2.Clear();
                 txtSo3.Clear();
+
                 cbSoLuongVe.SelectedIndex = 0;
             }
-
-
         }
 
-        private void txtSo1_TextChanged(object sender, EventArgs e)
+        private void txtSo1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(txtSo1.Text != "" && txtSo2.Text != "" && txtSo3.Text != "")
+            if ((e.KeyChar < '0' || e.KeyChar > '9') || txtSo1.Text.Length >= 2)
             {
-                btnXacNhan.Enabled = true;
+                e.Handled = true; // không cho phép nhập
             }
-            else
+        }
+
+        private void txtSo1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
             {
-                btnXacNhan.Enabled = false;
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo1.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo1.Text = txtSo1.Text.Remove(txtSo1.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo1.Select(txtSo1.Text.Length, 1);
+                }
             }
+        }
+
+        private void txtSo2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9' || txtSo2.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+
+        private void txtSo2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo2.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo2.Text = txtSo2.Text.Remove(txtSo2.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo2.Select(txtSo2.Text.Length, 1);
+                }
+            }
+        }
+
+        private void txtSo3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9' || txtSo3.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+
+        private void txtSo3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo3.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo3.Text = txtSo3.Text.Remove(txtSo3.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo3.Select(txtSo3.Text.Length, 1);
+                }
+            }
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            Random rd = new Random();
+            int So1 = rd.Next(0, 99);
+            int So2 = rd.Next(0, 99);
+            int So3 = rd.Next(0, 99);
+
+            txtSo1.Text = So1.ToString();
+            txtSo2.Text = So2.ToString();
+            txtSo3.Text = So3.ToString();
         }
 
         private void Mua3So_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(40, 180, 135);
             for (int i = 1; i <= 10; ++i)
             {
                 cbSoLuongVe.Items.Add(i);

@@ -22,13 +22,16 @@ namespace WindowsFormsApp1
 
         private void LichSuDatCuoc_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(125, 213, 111);
+            lvVeDaMua.BackColor = Color.FromArgb(125, 213, 111);
+
             lvVeDaMua.GridLines = true;
             lvVeDaMua.FullRowSelect = true;
             lvVeDaMua.View = View.Details;
 
-            lvVeDaMua.Columns.Add("Ngày mua", 200, HorizontalAlignment.Center);
-            lvVeDaMua.Columns.Add("Loại vé", 200, HorizontalAlignment.Center);
-            lvVeDaMua.Columns.Add("Số lượng vé", 200, HorizontalAlignment.Center);
+            lvVeDaMua.Columns.Add("Ngày mua", 180, HorizontalAlignment.Center);
+            lvVeDaMua.Columns.Add("Loại vé", 120, HorizontalAlignment.Center);
+            lvVeDaMua.Columns.Add("Số lượng vé", 150, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Các số được chọn", 200, HorizontalAlignment.Center);
 
         }
@@ -134,14 +137,14 @@ namespace WindowsFormsApp1
                 {
                     if (rdLuaChon.Checked)
                     {
-                        if ((DanhSachVeDatMua.ListVeDatMua1[i].TenTaiKhoan1 == Form1.TenDangNhap) && (DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date >= NgayBatDau && DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date <= NgayKetThuc))
+                        if ((DanhSachVeDatMua.ListVeDatMua1[i].TenTaiKhoan1 == DangNhap.TenDangNhap) && (DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date >= NgayBatDau && DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date <= NgayKetThuc))
                         {
                             ThemVaoListView(DanhSachVeDatMua.ListVeDatMua1[i]);
                         }
                     }
                     else
                     {
-                        if ((DanhSachVeDatMua.ListVeDatMua1[i].TenTaiKhoan1 == Form1.TenDangNhap))
+                        if ((DanhSachVeDatMua.ListVeDatMua1[i].TenTaiKhoan1 == DangNhap.TenDangNhap))
                         {
                             ThemVaoListView(DanhSachVeDatMua.ListVeDatMua1[i]);
 

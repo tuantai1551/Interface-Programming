@@ -11,15 +11,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class KetQua : Form
+    public partial class LichSuTrungThuong : Form
     {
-        public KetQua()
+        public LichSuTrungThuong()
         {
             InitializeComponent();
         }
 
         private void KetQua_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(125, 213, 111);
+
+            lvKetQua.BackColor = Color.FromArgb(180, 142, 206);
+
             cbLuaChon.Items.Add("Tất cả");
             cbLuaChon.Items.Add("3 vé");
             cbLuaChon.Items.Add("4 vé");
@@ -48,7 +52,7 @@ namespace WindowsFormsApp1
             }
             if (cbLuaChon.SelectedIndex == LuaChon
                 && Prize.NgayMua1 == Ticket.NgayMua1 // Ngày mua
-                && Form1.TenDangNhap == Ticket.TenTaiKhoan1
+                && DangNhap.TenDangNhap == Ticket.TenTaiKhoan1
                 && Prize.LoaiVe1 == Ticket.LoaiVe1) // Tài khoản mua)
             {
                 return true;

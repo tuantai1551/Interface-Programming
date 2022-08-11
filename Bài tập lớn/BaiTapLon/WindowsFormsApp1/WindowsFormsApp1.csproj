@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChonSo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChonSo.Designer.cs">
-      <DependentUpon>ChonSo.cs</DependentUpon>
-    </Compile>
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,18 +55,18 @@
     <Compile Include="DanhSachGiaiThuong.cs" />
     <Compile Include="DanhSachNguoiDung.cs" />
     <Compile Include="DanhSachVeDatMua.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaiThuong.cs" />
-    <Compile Include="KetQua.cs">
+    <Compile Include="LichSuTrungThuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KetQua.Designer.cs">
-      <DependentUpon>KetQua.cs</DependentUpon>
+    <Compile Include="LichSuTrungThuong.Designer.cs">
+      <DependentUpon>LichSuTrungThuong.cs</DependentUpon>
     </Compile>
     <Compile Include="LayLaiMatKhau.cs">
       <SubType>Form</SubType>
@@ -119,24 +113,21 @@
     <Compile Include="QuayThuong.Designer.cs">
       <DependentUpon>QuayThuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongKe.cs">
+    <Compile Include="ThongKeKetQua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <Compile Include="ThongKeKetQua.Designer.cs">
+      <DependentUpon>ThongKeKetQua.cs</DependentUpon>
     </Compile>
     <Compile Include="Ve.cs" />
-    <EmbeddedResource Include="ChonSo.resx">
-      <DependentUpon>ChonSo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KetQua.resx">
-      <DependentUpon>KetQua.cs</DependentUpon>
+    <EmbeddedResource Include="LichSuTrungThuong.resx">
+      <DependentUpon>LichSuTrungThuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LayLaiMatKhau.resx">
       <DependentUpon>LayLaiMatKhau.cs</DependentUpon>
@@ -169,8 +160,8 @@
     <EmbeddedResource Include="QuayThuong.resx">
       <DependentUpon>QuayThuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="ThongKeKetQua.resx">
+      <DependentUpon>ThongKeKetQua.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -259,6 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-name-tag-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-chon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel-g074b3e49f_640.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

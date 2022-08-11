@@ -38,7 +38,6 @@ namespace WindowsFormsApp1
             this.txtSo1 = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnRandom = new System.Windows.Forms.Button();
-            this.btnThayDoi = new System.Windows.Forms.Button();
             this.cbSoLuongVe = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -70,7 +69,6 @@ namespace WindowsFormsApp1
             // 
             // txtSo5
             // 
-            this.txtSo5.Enabled = false;
             this.txtSo5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo5.Location = new System.Drawing.Point(640, 38);
             this.txtSo5.Name = "txtSo5";
@@ -78,10 +76,11 @@ namespace WindowsFormsApp1
             this.txtSo5.TabIndex = 4;
             this.txtSo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSo5.TextChanged += new System.EventHandler(this.txtSo1_TextChanged);
+            this.txtSo5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSo5_KeyDown);
+            this.txtSo5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo5_KeyPress);
             // 
             // txtSo4
             // 
-            this.txtSo4.Enabled = false;
             this.txtSo4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo4.Location = new System.Drawing.Point(489, 38);
             this.txtSo4.Name = "txtSo4";
@@ -89,10 +88,11 @@ namespace WindowsFormsApp1
             this.txtSo4.TabIndex = 3;
             this.txtSo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSo4.TextChanged += new System.EventHandler(this.txtSo1_TextChanged);
+            this.txtSo4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSo4_KeyDown);
+            this.txtSo4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo4_KeyPress);
             // 
             // txtSo2
             // 
-            this.txtSo2.Enabled = false;
             this.txtSo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo2.Location = new System.Drawing.Point(176, 38);
             this.txtSo2.Name = "txtSo2";
@@ -100,10 +100,11 @@ namespace WindowsFormsApp1
             this.txtSo2.TabIndex = 2;
             this.txtSo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSo2.TextChanged += new System.EventHandler(this.txtSo1_TextChanged);
+            this.txtSo2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSo2_KeyDown);
+            this.txtSo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo2_KeyPress);
             // 
             // txtSo3
             // 
-            this.txtSo3.Enabled = false;
             this.txtSo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo3.Location = new System.Drawing.Point(325, 38);
             this.txtSo3.Name = "txtSo3";
@@ -111,10 +112,11 @@ namespace WindowsFormsApp1
             this.txtSo3.TabIndex = 1;
             this.txtSo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSo3.TextChanged += new System.EventHandler(this.txtSo1_TextChanged);
+            this.txtSo3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSo3_KeyDown);
+            this.txtSo3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo3_KeyPress);
             // 
             // txtSo1
             // 
-            this.txtSo1.Enabled = false;
             this.txtSo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSo1.Location = new System.Drawing.Point(25, 38);
             this.txtSo1.Name = "txtSo1";
@@ -122,12 +124,14 @@ namespace WindowsFormsApp1
             this.txtSo1.TabIndex = 0;
             this.txtSo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSo1.TextChanged += new System.EventHandler(this.txtSo1_TextChanged);
+            this.txtSo1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSo1_KeyDown);
+            this.txtSo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo1_KeyPress);
             // 
             // btnXacNhan
             // 
             this.btnXacNhan.Enabled = false;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(105, 352);
+            this.btnXacNhan.Location = new System.Drawing.Point(146, 352);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(261, 63);
             this.btnXacNhan.TabIndex = 14;
@@ -138,26 +142,14 @@ namespace WindowsFormsApp1
             // btnRandom
             // 
             this.btnRandom.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnRandom.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._1055804;
+            this.btnRandom.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.refresh_page_option;
             this.btnRandom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRandom.Location = new System.Drawing.Point(457, 352);
+            this.btnRandom.Location = new System.Drawing.Point(573, 354);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(68, 61);
-            this.btnRandom.TabIndex = 16;
+            this.btnRandom.TabIndex = 12;
             this.btnRandom.UseVisualStyleBackColor = true;
             this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
-            // 
-            // btnThayDoi
-            // 
-            this.btnThayDoi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThayDoi.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.refresh_page_option;
-            this.btnThayDoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThayDoi.Location = new System.Drawing.Point(618, 352);
-            this.btnThayDoi.Name = "btnThayDoi";
-            this.btnThayDoi.Size = new System.Drawing.Size(68, 61);
-            this.btnThayDoi.TabIndex = 12;
-            this.btnThayDoi.UseVisualStyleBackColor = true;
-            this.btnThayDoi.Click += new System.EventHandler(this.btnThayDoi_Click);
             // 
             // cbSoLuongVe
             // 
@@ -167,6 +159,8 @@ namespace WindowsFormsApp1
             this.cbSoLuongVe.Name = "cbSoLuongVe";
             this.cbSoLuongVe.Size = new System.Drawing.Size(151, 46);
             this.cbSoLuongVe.TabIndex = 18;
+            this.cbSoLuongVe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSoLuongVe_KeyDown);
+            this.cbSoLuongVe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbSoLuongVe_KeyPress);
             // 
             // label2
             // 
@@ -186,11 +180,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.cbSoLuongVe);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnXacNhan);
-            this.Controls.Add(this.btnThayDoi);
+            this.Controls.Add(this.btnRandom);
             this.Name = "Mua5So";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mua5So";
             this.Load += new System.EventHandler(this.Mua5So_Load);
             this.groupBox1.ResumeLayout(false);
@@ -203,14 +197,13 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSo4;
         private System.Windows.Forms.TextBox txtSo2;
         private System.Windows.Forms.TextBox txtSo3;
         private System.Windows.Forms.TextBox txtSo1;
         private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.Button btnThayDoi;
+        private System.Windows.Forms.Button btnRandom;
         private System.Windows.Forms.TextBox txtSo5;
         private System.Windows.Forms.ComboBox cbSoLuongVe;
         private System.Windows.Forms.Label label2;

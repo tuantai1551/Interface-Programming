@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ThongKe : Form
+    public partial class ThongKeKetQua : Form
     {
-        public ThongKe()
+        public ThongKeKetQua()
         {
             InitializeComponent();
         }
@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             item.SubItems.Add(string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", Prize.SoTienTrung1));
 
 
-            lvKetQua.Items.Add(item);
+            lvThongKe.Items.Add(item);
         }
 
         //Sắp xếp theo ngày tăng dần
@@ -63,16 +63,16 @@ namespace WindowsFormsApp1
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            lvKetQua.Clear();
+            lvThongKe.Clear();
 
-            lvKetQua.Columns.Add("Ngày quay", 180, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Hạng mục", 150, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Kết quả", 200, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Số tiền trúng", 200, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Ngày quay", 180, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Hạng mục", 150, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Kết quả", 200, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Số tiền trúng", 170, HorizontalAlignment.Center);
 
-            lvKetQua.View = View.Details;
-            lvKetQua.GridLines = true;
-            lvKetQua.FullRowSelect = true;
+            lvThongKe.View = View.Details;
+            lvThongKe.GridLines = true;
+            lvThongKe.FullRowSelect = true;
 
             int size = DanhSachGiaiThuong.ListGiaiThuong1.Count;
             DateTime NgayBatDau = dtpNgayBatDau.Value;
@@ -84,7 +84,8 @@ namespace WindowsFormsApp1
                 SapXepTheoNgay();
                 for (int i = 0; i < size; ++i)
                 {
-                    if (rdTatCa.Checked)
+                    
+                    if (rdAll.Checked)
                     {
                         ThemVaoListView(DanhSachGiaiThuong.ListGiaiThuong1[i]);
                     }
@@ -106,6 +107,21 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void ThongKe_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(125, 213, 111);
+
+            lvThongKe.BackColor = Color.FromArgb(224, 164, 105);
+
+            lvThongKe.Columns.Add("Ngày quay", 180, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Hạng mục", 150, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Kết quả", 200, HorizontalAlignment.Center);
+            lvThongKe.Columns.Add("Số tiền trúng", 170, HorizontalAlignment.Center);
+
+            lvThongKe.View = View.Details;
+            lvThongKe.GridLines = true;
+            lvThongKe.FullRowSelect = true;
+        }
     }
 
 }

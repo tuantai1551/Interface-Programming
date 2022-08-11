@@ -19,9 +19,10 @@ namespace WindowsFormsApp1
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            txtTenDangNhap.Text = Form1.TenDangNhap;
-            txtSoDienThoai.Text = Form1.SoDienThoai;
-            txtEmail.Text = Form1.Email;
+            txtTenDangNhap.Text = DangNhap.TenDangNhap;
+            txtSoDienThoai.Text = DangNhap.SoDienThoai;
+            txtEmail.Text = DangNhap.Email;
+
         }
 
 
@@ -67,14 +68,15 @@ namespace WindowsFormsApp1
 
         private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThongKe FormThongKe = new ThongKe();
-            FormThongKe.ShowDialog();
+            ThongKeKetQua FormThongKeKetQua = new ThongKeKetQua();
+            FormThongKeKetQua.ShowDialog();
         }
 
-        private void kếtQuảToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LichSuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KetQua FormKetQua = new KetQua();
-            FormKetQua.ShowDialog();
+            LichSuTrungThuong FormLichSuTrungThuong = new LichSuTrungThuong();
+            FormLichSuTrungThuong.ShowDialog();
         }
+
     }
 }

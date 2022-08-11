@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.linkDangKy = new System.Windows.Forms.LinkLabel();
@@ -146,7 +146,7 @@ namespace WindowsFormsApp1
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Image = global::WindowsFormsApp1.Properties.Resources.vcsnormal_93488;
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangNhap.Location = new System.Drawing.Point(144, 384);
+            this.btnDangNhap.Location = new System.Drawing.Point(157, 384);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(231, 49);
             this.btnDangNhap.TabIndex = 1;
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(561, 459);
             this.panel1.TabIndex = 7;
             // 
-            // Form1
+            // DangNhap
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,7 +175,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương trình sổ xố";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

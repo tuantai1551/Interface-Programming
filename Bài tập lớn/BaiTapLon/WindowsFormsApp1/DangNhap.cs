@@ -13,9 +13,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class DangNhap : Form
     {
-        public Form1()
+        public DangNhap()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             //Kiểm tra dữ liệu hợp lệ của txtTenDangNhap và txtMatKhau
-            if (txtTenDangNhap.Text == "admin" && txtMatKhau.Text == "admin")
+            if (txtTenDangNhap.Text.ToLower() == "admin" && txtMatKhau.Text.ToLower() == "admin")
             {
                 QuayThuong FormQuayThuong = new QuayThuong();
                 FormQuayThuong.ShowDialog();

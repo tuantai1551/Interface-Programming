@@ -23,6 +23,10 @@ namespace WindowsFormsApp1
 
         private void QuayThuong_Load(object sender, EventArgs e)
         {
+            lvVeDaMua.BackColor = Color.FromArgb(131, 76, 107);
+            lvKetQua.BackColor = Color.FromArgb(131, 76, 107);
+
+
             //Form quay số
             cbLuaChon.Items.Add("Quay 3 số");
             cbLuaChon.Items.Add("Quay 4 số");
@@ -43,7 +47,7 @@ namespace WindowsFormsApp1
             lvVeDaMua.Columns.Add("Tên tài khoản", 180, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Ngày mua", 120, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Loại vé", 120, HorizontalAlignment.Center);
-            lvVeDaMua.Columns.Add("Số lượng vé", 120, HorizontalAlignment.Center);
+            lvVeDaMua.Columns.Add("Số lượng vé", 150, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Các số được chọn", 200, HorizontalAlignment.Center);
 
             //Form thống kê kết quả
@@ -261,8 +265,8 @@ namespace WindowsFormsApp1
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            DateTime NgayBatDau = dtpNgayBatDau.Value.Date;
-            DateTime NgayKetThuc = dtpNgayKetThuc.Value.Date;
+            DateTime NgayBatDau = dtpNgayBatDau_LSĐC.Value.Date;
+            DateTime NgayKetThuc = dtpNgayKetThuc_LSĐC.Value.Date;
 
             lvVeDaMua.Clear();
 
@@ -273,7 +277,7 @@ namespace WindowsFormsApp1
             lvVeDaMua.Columns.Add("Tên tài khoản", 180, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Ngày mua", 120, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Loại vé", 120, HorizontalAlignment.Center);
-            lvVeDaMua.Columns.Add("Số lượng vé", 120, HorizontalAlignment.Center);
+            lvVeDaMua.Columns.Add("Số lượng vé", 150, HorizontalAlignment.Center);
             lvVeDaMua.Columns.Add("Các số được chọn", 200, HorizontalAlignment.Center);
 
 
@@ -292,15 +296,18 @@ namespace WindowsFormsApp1
             {
                 for (int i = 0; i < size; ++i)
                 {
-                    if (rdTatCa.Checked)
+                    if (rdTatCa_LSĐC.Checked)
                     {
                         ThemVaoListViewLichSuDatCuoc(DanhSachVeDatMua.ListVeDatMua1[i]);
                     }
-                    else if(rdLuaChon.Checked)
+                    else if(rdLuaChon_LSĐC.Checked)
                     {
-                        ThemVaoListViewLichSuDatCuoc(DanhSachVeDatMua.ListVeDatMua1[i]);
+                        if (DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date >= NgayBatDau && DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date <= NgayKetThuc)
+                        {
+                            ThemVaoListViewLichSuDatCuoc(DanhSachVeDatMua.ListVeDatMua1[i]);
+                        }
                     }
-                    else if(rdToday.Checked)
+                    else if(rdToday_LSĐC.Checked)
                     {
                         if (DanhSachVeDatMua.ListVeDatMua1[i].NgayMua1.Date == DateTime.Now.Date)
                         {
@@ -363,46 +370,19 @@ namespace WindowsFormsApp1
 
             lvKetQua.Items.Add(item);
         }
-
-
-        private void cbLoaive_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lvKetQua.Clear();
-
-            lvKetQua.Columns.Add("Tên tài khoản", 150, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Loại vé", 120, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Số vé", 100, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Ngày mua", 150, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Thông tin trúng", 200, HorizontalAlignment.Center);
-            lvKetQua.Columns.Add("Số tiền trúng", 180, HorizontalAlignment.Center);
-
-            lvKetQua.View = View.Details;
-            lvKetQua.FullRowSelect = true;
-            lvKetQua.GridLines = true;
-
-            int size_DanhSachVe = DanhSachVeDatMua.ListVeDatMua1.Count;
-            int size_DanhSachTrungThuong = DanhSachGiaiThuong.ListGiaiThuong1.Count;
-
-            if (size_DanhSachTrungThuong > 0)
-            {
-                XuLyFileKetQuaGiaiThuong();
-            }
-
-        }
-
         //Hiển thị các kết quả trúng thưởng
         private void XuLyFileKetQuaGiaiThuong()
         {
             int size_DanhSachVe = DanhSachVeDatMua.ListVeDatMua1.Count;
             int size_DanhSachTrungThuong = DanhSachGiaiThuong.ListGiaiThuong1.Count;
-            DateTime NgayBatDau = dtpNgayBatDau.Value.Date;
-            DateTime NgayKetThuc = dtpNgayKetThuc.Value.Date;
+            DateTime NgayBatDau = dtpNgayBatDau_LSĐC.Value.Date;
+            DateTime NgayKetThuc = dtpNgayKetThuc_LSĐC.Value.Date;
             for (int i = 0; i < size_DanhSachTrungThuong; ++i)
             {
                 //Danh sách vé mua
                 for (int j = 0; j < size_DanhSachVe; ++j)
                 {
-                    if (rdTatCa.Checked)
+                    if (rdTatCa_TKGT.Checked)
                     {
                         if (KiemTraTrungThuong(DanhSachGiaiThuong.ListGiaiThuong1[i], DanhSachVeDatMua.ListVeDatMua1[j])) // List vé được mua
                         {
@@ -416,7 +396,7 @@ namespace WindowsFormsApp1
                                 {
                                     ThemVaoListViewThongKeGiaiThuong(DanhSachGiaiThuong.ListGiaiThuong1[i], DanhSachVeDatMua.ListVeDatMua1[j]);
                                 }
-                                
+
                             }
                             else if (cbLoaive.SelectedIndex == 2)
                             {
@@ -435,7 +415,7 @@ namespace WindowsFormsApp1
 
                         }
                     }
-                    else if (rdLuaChon.Checked)
+                    else if (rdLuaChon_TKGT.Checked)
                     {
                         if ((DanhSachGiaiThuong.ListGiaiThuong1[i].NgayMua1 >= NgayBatDau && DanhSachGiaiThuong.ListGiaiThuong1[i].NgayMua1 <= NgayKetThuc)
                             && KiemTraTrungThuong(DanhSachGiaiThuong.ListGiaiThuong1[i], DanhSachVeDatMua.ListVeDatMua1[j]))
@@ -507,6 +487,33 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void cbLoaive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lvKetQua.Clear();
+
+            lvKetQua.Columns.Add("Tên tài khoản", 150, HorizontalAlignment.Center);
+            lvKetQua.Columns.Add("Loại vé", 120, HorizontalAlignment.Center);
+            lvKetQua.Columns.Add("Số vé", 100, HorizontalAlignment.Center);
+            lvKetQua.Columns.Add("Ngày mua", 150, HorizontalAlignment.Center);
+            lvKetQua.Columns.Add("Thông tin trúng", 200, HorizontalAlignment.Center);
+            lvKetQua.Columns.Add("Số tiền trúng", 180, HorizontalAlignment.Center);
+
+            lvKetQua.View = View.Details;
+            lvKetQua.FullRowSelect = true;
+            lvKetQua.GridLines = true;
+
+            int size_DanhSachVe = DanhSachVeDatMua.ListVeDatMua1.Count;
+            int size_DanhSachTrungThuong = DanhSachGiaiThuong.ListGiaiThuong1.Count;
+
+            if (size_DanhSachTrungThuong > 0)
+            {
+                XuLyFileKetQuaGiaiThuong();
+            }
+
+        }
+
+
+
         private void QuayThuong_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn đăng xuất không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -518,5 +525,6 @@ namespace WindowsFormsApp1
                 e.Cancel = true;
             }
         }
+
     }
 }

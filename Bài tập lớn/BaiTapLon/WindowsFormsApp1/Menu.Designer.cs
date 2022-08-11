@@ -29,13 +29,13 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.MenuChon = new System.Windows.Forms.MenuStrip();
             this.muaVéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sốToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sốToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.xemLịchSửĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kếtQuảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LichSuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,28 +47,28 @@ namespace WindowsFormsApp1
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.menuStrip2.SuspendLayout();
+            this.MenuChon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip2
+            // MenuChon
             // 
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuChon.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.MenuChon.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuChon.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuChon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.muaVéToolStripMenuItem,
             this.xemLịchSửĐặtToolStripMenuItem,
-            this.kếtQuảToolStripMenuItem,
+            this.LichSuToolStripMenuItem,
             this.thốngKêToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1121, 49);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuStrip2";
+            this.MenuChon.Location = new System.Drawing.Point(0, 0);
+            this.MenuChon.Name = "MenuChon";
+            this.MenuChon.Size = new System.Drawing.Size(1035, 49);
+            this.MenuChon.TabIndex = 1;
+            this.MenuChon.Text = "menuStrip2";
             // 
             // muaVéToolStripMenuItem
             // 
@@ -109,12 +109,12 @@ namespace WindowsFormsApp1
             this.xemLịchSửĐặtToolStripMenuItem.Text = "Lịch sử đặt cược";
             this.xemLịchSửĐặtToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửĐặtToolStripMenuItem_Click_1);
             // 
-            // kếtQuảToolStripMenuItem
+            // LichSuToolStripMenuItem
             // 
-            this.kếtQuảToolStripMenuItem.Name = "kếtQuảToolStripMenuItem";
-            this.kếtQuảToolStripMenuItem.Size = new System.Drawing.Size(309, 45);
-            this.kếtQuảToolStripMenuItem.Text = "Lịch sử trúng thưởng";
-            this.kếtQuảToolStripMenuItem.Click += new System.EventHandler(this.kếtQuảToolStripMenuItem_Click);
+            this.LichSuToolStripMenuItem.Name = "LichSuToolStripMenuItem";
+            this.LichSuToolStripMenuItem.Size = new System.Drawing.Size(309, 45);
+            this.LichSuToolStripMenuItem.Text = "Lịch sử trúng thưởng";
+            this.LichSuToolStripMenuItem.Click += new System.EventHandler(this.LichSuToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 208);
+            this.label2.Location = new System.Drawing.Point(232, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(206, 32);
             this.label2.TabIndex = 3;
@@ -137,7 +137,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(92, 274);
+            this.label3.Location = new System.Drawing.Point(232, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 32);
             this.label3.TabIndex = 4;
@@ -147,7 +147,7 @@ namespace WindowsFormsApp1
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(92, 337);
+            this.label5.Location = new System.Drawing.Point(232, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 32);
             this.label5.TabIndex = 6;
@@ -157,7 +157,7 @@ namespace WindowsFormsApp1
             // 
             this.txtTenDangNhap.Enabled = false;
             this.txtTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDangNhap.Location = new System.Drawing.Point(314, 202);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(454, 201);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(390, 38);
             this.txtTenDangNhap.TabIndex = 7;
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
             // 
             this.txtSoDienThoai.Enabled = false;
             this.txtSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(314, 268);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(454, 267);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(390, 38);
             this.txtSoDienThoai.TabIndex = 8;
@@ -175,7 +175,7 @@ namespace WindowsFormsApp1
             // 
             this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(314, 334);
+            this.txtEmail.Location = new System.Drawing.Point(454, 333);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(390, 38);
             this.txtEmail.TabIndex = 9;
@@ -184,7 +184,7 @@ namespace WindowsFormsApp1
             // 
             this.pictureBox3.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.icons8_name_tag_100;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(343, 79);
+            this.pictureBox3.Location = new System.Drawing.Point(483, 78);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(153, 98);
             this.pictureBox3.TabIndex = 10;
@@ -194,7 +194,7 @@ namespace WindowsFormsApp1
             // 
             this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.id_card;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 212);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 211);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(52, 28);
             this.pictureBox1.TabIndex = 19;
@@ -204,7 +204,7 @@ namespace WindowsFormsApp1
             // 
             this.pictureBox6.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.telephone_call;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(24, 278);
+            this.pictureBox6.Location = new System.Drawing.Point(164, 277);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(52, 28);
             this.pictureBox6.TabIndex = 22;
@@ -214,7 +214,7 @@ namespace WindowsFormsApp1
             // 
             this.pictureBox2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.gmail;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 337);
+            this.pictureBox2.Location = new System.Drawing.Point(164, 336);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(52, 28);
             this.pictureBox2.TabIndex = 23;
@@ -225,7 +225,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1121, 450);
+            this.ClientSize = new System.Drawing.Size(1035, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
@@ -236,14 +236,14 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.MenuChon);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
+            this.MenuChon.ResumeLayout(false);
+            this.MenuChon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -254,12 +254,12 @@ namespace WindowsFormsApp1
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.MenuStrip MenuChon;
         private System.Windows.Forms.ToolStripMenuItem muaVéToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sốToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sốToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sốToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem kếtQuảToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LichSuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

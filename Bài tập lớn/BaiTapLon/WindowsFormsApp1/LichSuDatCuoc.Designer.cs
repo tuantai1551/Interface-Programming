@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             this.lvVeDaMua.HideSelection = false;
             this.lvVeDaMua.Location = new System.Drawing.Point(151, 288);
             this.lvVeDaMua.Name = "lvVeDaMua";
-            this.lvVeDaMua.Size = new System.Drawing.Size(916, 260);
+            this.lvVeDaMua.Size = new System.Drawing.Size(896, 260);
             this.lvVeDaMua.TabIndex = 1;
             this.lvVeDaMua.UseCompatibleStateImageBehavior = false;
             // 

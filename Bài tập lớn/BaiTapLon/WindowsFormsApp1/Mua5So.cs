@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             {
                 //Ghi vào trong file
                 string directoryPath = Application.StartupPath + @"\DanhSachVeDaMua.TXT";
-                Form1 frm1 = new Form1();
+                DangNhap frm1 = new DangNhap();
                 //Ghi file
                 string today = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -39,7 +39,8 @@ namespace WindowsFormsApp1
                 SoDaMua.Add(int.Parse(txtSo4.Text));
                 SoDaMua.Add(int.Parse(txtSo5.Text));
 
-                Ve Ticket = new Ve(Form1.TenDangNhap, DateTime.Parse(today), 5, cbSoLuongVe.SelectedIndex + 1, SoDaMua);
+
+                Ve Ticket = new Ve(DangNhap.TenDangNhap, DateTime.Parse(today), 5, cbSoLuongVe.SelectedIndex + 1, SoDaMua);
 
                 DanhSachVeDatMua.ListVeDatMua1.Add(Ticket);
 
@@ -64,20 +65,175 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void btnRandom_Click(object sender, EventArgs e)
-        {
-            ChonSo.LuaChon = 5;
-            ChonSo FormChonSo = new ChonSo();
-            FormChonSo.ShowDialog();
 
-            txtSo1.Text = ChonSo.List5SoDuocChon[0].ToString();
-            txtSo2.Text = ChonSo.List5SoDuocChon[1].ToString();
-            txtSo3.Text = ChonSo.List5SoDuocChon[2].ToString();
-            txtSo4.Text = ChonSo.List5SoDuocChon[3].ToString();
-            txtSo5.Text = ChonSo.List5SoDuocChon[4].ToString();
+        private void txtSo1_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSo1.Text.Length != 0 && txtSo2.Text.Length != 0 && txtSo3.Text.Length != 0 && txtSo4.Text.Length != 0 && txtSo5.Text.Length != 0)
+            {
+                btnXacNhan.Enabled = true;
+            }
+            else
+            {
+                btnXacNhan.Enabled = false;
+            }
         }
 
-        private void btnThayDoi_Click(object sender, EventArgs e)
+        private void Mua5So_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(40, 180, 135);
+
+            for (int i = 1; i <= 10; ++i)
+            {
+                cbSoLuongVe.Items.Add(i);
+            }
+
+            cbSoLuongVe.SelectedIndex = 0;
+        }
+
+
+
+        private void txtSo1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') || txtSo1.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+        private void txtSo1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo1.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo1.Text = txtSo1.Text.Remove(txtSo1.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo1.Select(txtSo1.Text.Length, 1);
+                }
+            }
+        }
+        private void txtSo2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') || txtSo2.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+        private void txtSo2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo2.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo2.Text = txtSo2.Text.Remove(txtSo2.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo2.Select(txtSo2.Text.Length, 1);
+                }
+            }
+        }
+
+        private void txtSo3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') || txtSo3.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+
+        private void txtSo3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo3.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo3.Text = txtSo3.Text.Remove(txtSo3.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo3.Select(txtSo3.Text.Length, 1);
+                }
+            }
+        }
+
+        private void txtSo4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') || txtSo4.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+
+        private void txtSo4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo4.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo4.Text = txtSo4.Text.Remove(txtSo4.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo4.Select(txtSo4.Text.Length, 1);
+                }
+            }
+        }
+
+        private void txtSo5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') || txtSo5.Text.Length >= 2)
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+
+        private void txtSo5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (txtSo5.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    txtSo5.Text = txtSo5.Text.Remove(txtSo5.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    txtSo5.Select(txtSo5.Text.Length, 1);
+                }
+            }
+        }
+
+        private void cbSoLuongVe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9'))
+            {
+                e.Handled = true; // không cho phép nhập
+            }
+        }
+
+        private void cbSoLuongVe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                //Chỉ xử lý khi độ dài khác 0
+                if (cbSoLuongVe.Text.Length != 0)
+                {
+                    //Xóa ở ký tự cuối cùng
+                    cbSoLuongVe.Text = cbSoLuongVe.Text.Remove(cbSoLuongVe.Text.Length - 1);
+
+                    //Lùi lại con trỏ ở vị trí trước đó
+                    cbSoLuongVe.Select(cbSoLuongVe.Text.Length, 1);
+                }
+            }
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
         {
             Random rd = new Random();
             int So1 = rd.Next(0, 99);
@@ -91,28 +247,6 @@ namespace WindowsFormsApp1
             txtSo3.Text = So3.ToString();
             txtSo4.Text = So4.ToString();
             txtSo5.Text = So5.ToString();
-        }
-
-        private void txtSo1_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSo1.Text != "" && txtSo2.Text != "" && txtSo3.Text != "" && txtSo4.Text != "" && txtSo5.Text != "")
-            {
-                btnXacNhan.Enabled = true;
-            }
-            else
-            {
-                btnXacNhan.Enabled = false;
-            }
-        }
-
-        private void Mua5So_Load(object sender, EventArgs e)
-        {
-            for (int i = 1; i <= 10; ++i)
-            {
-                cbSoLuongVe.Items.Add(i);
-            }
-
-            cbSoLuongVe.SelectedIndex = 0;
         }
     }
 }
